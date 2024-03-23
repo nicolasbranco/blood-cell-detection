@@ -1,0 +1,9 @@
+# default libs
+numpy
+pandas
+matplotlib
+seaborn
+
+# machine learning
+torch
+scikit-learn
