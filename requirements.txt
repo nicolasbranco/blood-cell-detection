@@ -9,3 +9,4 @@ seaborn
 torch
 scikit-learn
 opencv-python-headless
+ultralytics
