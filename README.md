@@ -20,7 +20,7 @@ The used environment was developed with conda installed in Ubuntu in WSL2 in Win
 
 ## Results and examples
 
-The best model achieved can be found in *examples/model.pt* and here are some images with their classifications:
+The best model achieved can be found in *examples/best.pt* and here are some images with their classifications:
 
 ![image examples](examples/imgs_labels.png)
 
