@@ -14,6 +14,7 @@ The used environment was developed with conda installed in Ubuntu in WSL2 in Win
 - conda activate ENV_NAME
 - (only on first run) pip install -r requirements.txt
 - open the notebook and run all commands (my findings and comments related to the development are in the notebook file)
+> OBS: you will need to change the project_path variable in the first code cell of the notebook (use the absolute path)
 - after that you can use the *predict.py* to see the best model predictions of a image
 
 ## comments
