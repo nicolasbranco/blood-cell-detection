@@ -1,41 +1,34 @@
 from ultralytics import YOLO, settings
-import os
+import sys
 
-class_convertion = {0: "RBC", 1: "WBC", 2: "Platelets"}
+# configs
+class_conversion = {0: "RBC", 1: "WBC", 2: "Platelets"}
 
-# remove and recreate folders
-os.makedirs("yolo_data/datasets", exist_ok=True)
-os.makedirs("yolo_data/weights", exist_ok=True)
-os.makedirs("yolo_data/runs", exist_ok=True)
-
-# Update a setting
-settings.update(
-    {
-        "datasets_dir": "yolo_data/datasets",
-        "weights_dir": "yolo_data/weights",
-        "runs_dir": "yolo_data/runs",
-    }
-)
-
-
-def predict():
+def predict(img_path, show_results=True):
     # Load model
-    model = YOLO("yolo_data/runs/detect/train/weights/best.pt")
+    model = YOLO("examples/best.pt")
 
     # Predict
     results = model.predict(
-        "data/processed/Testing/Images/BloodImage_00339.jpg", verbose=False
-    )  # or 'data/images', or 'data/images/image.jpg'
+        img_path, verbose=False
+    )
 
     # get results
     classes_ids = results[0].boxes.cls.cpu().numpy()
-    classes_names = [class_convertion[class_id] for class_id in classes_ids]
+    classes_names = [class_conversion[class_id] for class_id in classes_ids]
     positions = results[0].boxes.xywh.cpu().numpy()
 
-    # Print results
-    print(classes_names)
-    print(positions)
+    if show_results:
+        print("Classes: ", classes_names)
+        print("Positions: ", positions)
+
+    return classes_names, positions
 
 
 if __name__ == "__main__":
-    predict()
+    #print(sys.argv[1])
+    if len(sys.argv) == 2:
+        predict(img_path=sys.argv[1])
+    else:
+        raise ValueError("Provide the correct number of parameters")
+
