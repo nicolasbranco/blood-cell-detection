@@ -17,6 +17,7 @@ The used environment was developed with conda installed in Ubuntu in WSL2 in Win
 > OBS: you will need to change the project_path variable in the first code cell of the notebook (use the absolute path)
 - after that you can use the *predict.py* to see the best model predictions of a image
 
+
 ## Results and examples
 
 The best model achieved can be found in *examples/model.pt* and here are some images with their classifications:
@@ -24,6 +25,16 @@ The best model achieved can be found in *examples/model.pt* and here are some im
 ![image examples](examples/imgs_labels.png)
 
 Some more training and evaluation information can be found in the yolo_data after the notebook is run.
+
+## Single image prediction
+
+It is possible to detect and predict the classes and positions of a image. To do that use:
+
+"""
+    python predict.py IMG_PATH
+"""
+
+By default that will use the model on example, however that can be changed for others models if intended.
 
 ## comments
 
