@@ -30,9 +30,10 @@ Some more training and evaluation information can be found in the yolo_data afte
 
 It is possible to detect and predict the classes and positions of a image. To do that use:
 
-"""
-    python predict.py IMG_PATH
-"""
+```bash
+python predict.py IMG_PATH
+```
+    
 
 By default that will use the model on example, however that can be changed for others models if intended.
 
