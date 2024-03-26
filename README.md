@@ -23,6 +23,7 @@ The best model achieved can be found in *examples/model.pt* and here are some im
 
 ![image examples](examples/imgs_labels.png)
 
+Some more training and evaluation information can be found in the yolo_data after the notebook is run.
 
 ## comments
 
