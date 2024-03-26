@@ -4,9 +4,9 @@ import sys
 # configs
 class_conversion = {0: "RBC", 1: "WBC", 2: "Platelets"}
 
-def predict(img_path, show_results=True):
+def predict(img_path, model_path="examples/best.pt", show_results=True):
     # Load model
-    model = YOLO("examples/best.pt")
+    model = YOLO(model_path)
 
     # Predict
     results = model.predict(
@@ -29,6 +29,8 @@ if __name__ == "__main__":
     #print(sys.argv[1])
     if len(sys.argv) == 2:
         predict(img_path=sys.argv[1])
+    elif len(sys.argv) == 3:
+        predict(img_path=sys.argv[1], model_path=sys.argv[2])
     else:
         raise ValueError("Provide the correct number of parameters")
 
