@@ -3,6 +3,17 @@
 This repo has the goal to study and try some possible solutions for the blood cell detection problem. It will detect and classify the White Blood Cell (WBC), Red Blood Cell (RBC) and Platelets. The dataset used can be found in this [GitHub Repo](https://github.com/MahmudulAlam/Complete-Blood-Cell-Count-Dataset) .
 
 
+## Repo structure
+
+- **data** (after notebook run)
+    - where the dataset will be saved
+- **examples**
+    - image & best model
+- **notebooks** 
+    - the study notebooks
+- **yolo_data** (after notebook run)
+    - reports & information related to yolo training and prediction
+- other configs and scripts
 
 
 ## Steps to replicate
